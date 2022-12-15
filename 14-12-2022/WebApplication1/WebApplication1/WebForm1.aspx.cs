@@ -62,7 +62,7 @@ namespace WebApplication1
                 // Creating Connection  
                 con = new SqlConnection("data source = DESKTOP-HIMQ0KV\\SQLEXPRESS; database=upload; integrated security=SSPI");
                 // writing sql query  
-                SqlCommand cm = new SqlCommand("insert into costmer  ( name, age, srcPath)values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + "Images/" + Path.GetFileName(FileUpload1.FileName) + "')", con);
+                SqlCommand cm = new SqlCommand($"insert into costmer  ( name, age, srcPath)values('{ TextBox1.Text}',   '{ TextBox2.Text}'   ,  'Images/ { Path.GetFileName(FileUpload1.FileName)}')"   , con);
                 // Opening Connection  
                 con.Open();
                 // Executing the SQL query  
